@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link media="all" type="text/css" rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar"> 
+            <div class="logo">
+                <h2> Team 2</h2>
+            </div>
+            <div class="search">
+                <input type="text" id="search" placeholder="search here">
+                <label for="search"> <i class="fas fa-search"> </i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="images/revou.png" alt="">
+            </div>
+        </div>
+            <div class="sidebar"> 
+                
+                    <ul>
+                        <li> 
+                            <a href="dash.html">
+                            <i class=" fas fa-th-large"></i>
+                            <div> Dashboard</div>
+                         </a>
+                        
+                        </li>
+
+                        <li> 
+                            <a href="charts.html">
+                            <i class=" fas fa-chart-bar"></i>
+                            <div> Charts </div>
+                         </a>
+                        </li>
+                        <li> 
+                            <a href="team.html">
+                            <i class=" fas fa-users"></i>
+                            <div> Team</div>
+                         </a>
+                        </li>
+                        
+                        <li> 
+                            <a href="rate.html">
+                            <i class=" fas fa-star"></i>
+                            <div> Rate us </div>
+                         </a>
+                        </li>
+                      
+                    </ul>
+
+            </div>
+            <div class="main">
+                <div class="wadah">
+                    <div class="box">
+                    <h2 class="header" style="margin-bottom: 50px; display: flex;
+                        justify-content: center;"> Rate Us </h2>
+                
+                    <div class="rating">
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sangat Bagus"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Bagus"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Cukup"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Buruk"></label>
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Sangat Buruk"></label>
+                    </div>
+                
+                    <div class="bottom">
+                        <textarea id="reviewText" class="review-text" placeholder="Tulis ulasan Anda di sini..."></textarea>
+                        <button onclick="submitReview()" class="submit-btn">Kirim Ulasan</button>
+                    </div>
+                
+                    <div id="reviewResult" class="review-result"></div>
+                    
+                </div> 
+                <div class="bungkus"></div>
+                </div>
+                
+                
+                <script>
+                    function submitReview() {
+                        var rating = document.querySelector('input[name="rating"]:checked');
+                        var reviewText = document.getElementById('reviewText').value;
+                
+                        if (!rating || !reviewText) {
+                            alert("Harap beri rating dan tulis ulasan Anda sebelum mengirim!");
+                            return;
+                        }
+                
+                        var result = "Rating: " + rating.value + "/5<br>";
+                        result += "Ulasan: " + reviewText;
+                
+                        document.getElementById('reviewResult').innerHTML = result;
+                    }
+
+                    document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('keyup', function(event) {
+                const searchTerm = event.target.value.toLowerCase();
+                const itemsToSearch = document.querySelectorAll('.sidebar a div'); 
+                itemsToSearch.forEach(function(item) {
+                    const textContent = item.textContent.toLowerCase();
+                    const listItem = item.parentElement.parentElement;
+                    if (textContent.includes(searchTerm)) {
+                        listItem.style.display = 'block'; 
+                    } else {
+                        listItem.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+                    
+         </script>
+                
+                
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> 
+  <script src="chart1.js"></script>
+  <script src="chart2.js"></script>
+</body>
+</html>

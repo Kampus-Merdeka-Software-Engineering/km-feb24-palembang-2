@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('line'); // Mengubah ID sesuai dengan yang digunakan dalam file HTML
+    const ctx = document.getElementById('line'); 
   
     fetch('./data/mechine.json')
         .then((response) => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then((data) => {
-            const uniqueData = _.uniqBy(data, 'Product'); // Filter data duplikat berdasarkan properti 'Location'
+            const uniqueData = _.uniqBy(data, 'Product'); 
             const products = uniqueData.map((item) => {
                 return item.Product;
             });
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return item.RPrice;
             });
   
-            // Pastikan data telah terbentuk dengan benar
             console.log(products);
             console.log(RPrice);
   

@@ -32,45 +32,39 @@
                          </a>
                         
                         </li>
+                      
                         <li> 
+                            <a href="charts.html">
+                            <i class=" fas fa-chart-bar"></i>
+                            <div> Charts </div>
+                         </a>
+                        </li>
+                     <li> 
                             <a href="team.html">
                             <i class=" fas fa-users"></i>
                             <div> Team</div>
                          </a>
                         </li>
                         <li> 
-                            <a href="index.html">
-                            <i class=" fas fa-chart-bar"></i>
-                            <div> Charts </div>
+                            <a href="rate.html">
+                            <i class=" fas fa-star"></i>
+                            <div> Rate us </div>
                          </a>
                         </li>
-                        <li> 
-                            <a href="dash.html">
-                            <i class=" fas fa-cog"></i>
-                            <div> Help</div>
-                         </a>
-                        </li>
+                        
                     </ul>
 
             </div>
             <div class="main">
                 <div class="cards">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="number" id="card3Number">  </div>
-                            <div class="card-name" id="card3Number"> </div>
-                    </div>
-                        <div class="icon-box">
-                            <i class="fas fa-user-graduate"> </i>
-                        </div>
-                    </div>
+                  
                     <div class="card">
                         <div class="card-content">
                             <div class="number" id="card2Number">  </div>
                             <div class="card-name" id="card2Name">  </div>
                     </div>
                         <div class="icon-box">
-                            <i class="fas fa-user-graduate"> </i>
+                            <i class="fas fa-chart-bar"> </i>
                         </div>
                     </div>
                     <div class="card">
@@ -79,40 +73,56 @@
                             <div class="card-name" id="card1Name">  </div>
                     </div>
                         <div class="icon-box">
-                            <i class="fas fa-user-graduate"> </i>
+                            <i class="fas fa-chart-bar"> </i>
                         </div>
                     </div>
                 </div>
                 <div class="charts">
                     <div class="chart">
-                        <h2> barchart</h2>
+                        <h2> Order per Location</h2>
                         <canvas id="myChart"></canvas>
                     </div>
                   <div class="chart" id="donat">
-                         <h2> doughnut-Chart </h2>
+                         <h2> Order per Category </h2>
                         <canvas id="doughnut"></canvas>
                     </div>
-                    <div class="chart" id="garis">
-                        <h2> Line-Chart </h2>
+                    <div class="line_chart" id="garis">
+                        <h2>  Order per Product </h2>
                        <canvas id="line"></canvas>
                    </div>
-                   <div class="chart" id="area">
-                    <h2> PolarArea-Chart </h2>
-                   <canvas id="polarArea"></canvas>
                </div>
                 </div>
             </div>
+            
     </div> 
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('keyup', function(event) {
+                const searchTerm = event.target.value.toLowerCase();
+                const itemsToSearch = document.querySelectorAll('.sidebar a div'); 
+                itemsToSearch.forEach(function(item) {
+                    const textContent = item.textContent.toLowerCase();
+                    const listItem = item.parentElement.parentElement;
+                    if (textContent.includes(searchTerm)) {
+                        listItem.style.display = 'block'; 
+                    } else {
+                        listItem.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+
+        ///chartsnya
     document.addEventListener("DOMContentLoaded", function() {
     updateCardData();
 });
 
 function updateCardData() {
     const ctx1 = document.getElementById('myChart');
-    const ctx2 = document.getElementById('doughnut');
-    const ctx3 = document.getElementById('line');
+     const ctx3 = document.getElementById('line');
     fetch('./data/mechine.json')
         .then((response) => response.json())
         .then((data) => {
@@ -138,20 +148,7 @@ function updateCardData() {
                     responsive: true
                 }
             });
-            new Chart(ctx2, {
-                type: 'doughnut',
-                data: {
-                    labels: locations,
-                    datasets: [{
-                        label: 'order per Location',
-                        data: RCoils,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true
-                }
-            });
+            
             new Chart(ctx3, {
                 type: 'line',
                 data: {
@@ -173,8 +170,7 @@ function updateCardData() {
             document.getElementById("card1Name").innerText = "Total Orders";
             document.getElementById("card2Number").innerText = totalData;
             document.getElementById("card2Name").innerText = "Total Orders";
-            document.getElementById("card3Number").innerText = totalData;
-            document.getElementById("card3Name").innerText = "Total Orders";
+     
         });
 }
 
@@ -183,6 +179,7 @@ function updateCardData() {
      
     
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> <!-- Include lodash library -->
   <script src="chart1.js"></script>
   <script src="chart2.js"></script>

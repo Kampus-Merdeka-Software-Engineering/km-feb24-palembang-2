@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -72,17 +73,17 @@
 
 @media screen and (max-width: 1200px){
     .topbar {
-        grid-template-columns: 1fr 4fr 0.4fr 1fr; /* Adjust column sizes */
+        grid-template-columns: 1fr 4fr 0.4fr 1fr; 
     }
 
     .search {
-        width: 50%; /* Reduce search bar width */
+        width: 50%; 
     }
 
     .sidebar {
-        width: 100%; /* Make sidebar full width */
-        position: static; /* Remove fixed positioning */
-        top: 60px; /* Position below top bar */
+        width: 100%; 
+        position: static; 
+        top: 60px; 
     }
     .image_dash {
         width: auto;
@@ -233,7 +234,7 @@ footer {
 .sidebar ul li a {
     width: 100%;
     text-decoration: none;
-    color: beige;
+    color: black;
     height: 60px;
     display: flex;
     align-items: center;
@@ -277,25 +278,24 @@ footer {
     width: calc(120% - 140px);
     left: 50px;
     min-height: calc(100%);
-    background: #b1cbbb;
+    background: whitesmoke;
 }
 
-.cards {
-    width: 100%;
+.cards{
+    width: 200%;
     display: grid;
     padding: 35px 20px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 20px;
 }
-
-.cards.card {
+.cards .card{
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
 }
 
 @media screen and (max-width: 1200px)  {
@@ -321,6 +321,7 @@ footer {
         font-size: 0.9rem;
 
     }
+    
 }
 /* bagian chartsnya */
 .charts {
@@ -369,3 +370,119 @@ footer {
 .text3{
     text-align: center;
 }
+
+/* bagian formnya */
+
+.wadah {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        position: relative;
+}
+.box{
+    width: 450px;
+    height: 500px;
+    background: #EEF7FF;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
+                -2px -0px 15px 2px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+.rating {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+.rating > input {
+    display: none;
+}
+.rating > label:before {
+    content: "\2605";
+    font-size: 2em;
+}
+.rating > input:checked ~ label:before,
+.rating:not(:checked) > label:hover ~ label:before {
+    content: "\2605";
+    color: gold;
+}
+.review-text {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 191, 0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-btn:hover {
+    background-color: rgb(255, 191, 0);
+}
+
+.review-result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    position: relative;
+}
+.bottom .review-text{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    position: relative;
+}
+.bungkus{
+    position: absolute;
+    width: 455px;
+    height: 500px;
+    border-radius: 30px;
+    background: rgb(255, 191, 0);
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
+                -2px -0px 15px 2px rgba(0,0,0,0.054);
+    transform: rotate(5deg);
+}
+@media screen and (max-width: 1200px)  {
+    .wadah {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+        position: relative;
+}
+.bungkus{
+    position: absolute;
+    width: 455px;
+    height: 500px;
+    border-radius: 30px;
+    background: rgb(255, 191, 0);
+    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
+                -2px -0px 15px 2px rgba(0,0,0,0.054);
+    transform: rotate(5deg);
+}
+
+
+}
+
+
+   

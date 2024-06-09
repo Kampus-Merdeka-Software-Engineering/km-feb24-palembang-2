@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('doughnut'); // Mengubah ID sesuai dengan yang digunakan dalam file HTML
+    const ctx = document.getElementById('doughnut');
   
     fetch('./data/mechine.json')
         .then((response) => {
@@ -9,22 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then((data) => {
-            const uniqueData = _.uniqBy(data, 'Category'); // Filter data duplikat berdasarkan properti 'Location'
-            const categoris = uniqueData.map((item) => {
-                return item.Category;
-            });
-            const RCoils = uniqueData.map((item) => {
-                return item.RCoil;
-            });
-  
-            // Pastikan data telah terbentuk dengan benar
-            console.log(categoris);
-            console.log(RCoils);
+            const uniqueData = _.uniqBy(data, 'Category');
+            const categories = uniqueData.map((item) => item.Category);
+            const RCoils = uniqueData.map((item) => item.RCoil);
   
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: categoris,
+                    labels: categories,
                     datasets: [{
                         label: 'order per Category',
                         data: RCoils,
@@ -32,12 +24,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     }]
                 },
                 options: {
-                    responsive: true
-                }
+                    responsive: true,
+                    plugins: {
+                        datalabels: {
+                            color: '#fff',
+                            formatter: (value, ctx) => {
+                                let datasets = ctx.chart.data.datasets;
+                                if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+                                    let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+                                    let percentage = Math.round((value / sum) * 100) + '%';
+                                    return percentage;
+                                } else {
+                                    return '';
+                                }
+                            }
+                        }
+                    }
+                },
+                plugins: [ChartDataLabels] 
             });
         })
         .catch((error) => {
             console.error('Error fetching or parsing data:', error);
         });
-  });
-  
+});
