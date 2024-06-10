@@ -394,7 +394,10 @@ footer {
     .line_chart {
         grid-column: span 2;
         margin-bottom: 1800px;
+<<<<<<< HEAD
         
+=======
+>>>>>>> cf322a3057539f96594f77da2441f52819185d56
     }
 }
 @media screen and (max-width: 800px) {
@@ -550,4 +553,8 @@ footer {
     .rating > label:before {
         font-size: 1.5em;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> cf322a3057539f96594f77da2441f52819185d56
