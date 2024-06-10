@@ -134,42 +134,13 @@ function updateCardData() {
             const products = uniqueProducts.map((item) => item.Product);
             const RPrice = uniqueProducts.map((item) => item.RPrice);
 
-            new Chart(ctx1, {
-                type: 'bar',
-                data: {
-                    labels: locations,
-                    datasets: [{
-                        label: 'order per Location',
-                        data: RCoils,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true
-                }
-            });
-            
-            new Chart(ctx3, {
-                type: 'line',
-                data: {
-                    labels: products,
-                    datasets: [{
-                        label: 'order per Products',
-                        data: RPrice,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true
-                }
-            });
-
+           
             // Mengambil jumlah data dari chart
             var totalData = RCoils.reduce((a, b) => a + b, 0);
             document.getElementById("card1Number").innerText = totalData;
-            document.getElementById("card1Name").innerText = "Total Orders";
+            document.getElementById("card1Name").innerText = "Total Orders per Product";
             document.getElementById("card2Number").innerText = totalData;
-            document.getElementById("card2Name").innerText = "Total Orders";
+            document.getElementById("card2Name").innerText = "Total Orders per Location";
      
         });
 }

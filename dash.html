@@ -108,10 +108,30 @@
                 
             </div>
     </div>
+
+    <script>
+         document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('keyup', function(event) {
+                const searchTerm = event.target.value.toLowerCase();
+                const itemsToSearch = document.querySelectorAll('.sidebar a div'); 
+                itemsToSearch.forEach(function(item) {
+                    const textContent = item.textContent.toLowerCase();
+                    const listItem = item.parentElement.parentElement;
+                    if (textContent.includes(searchTerm)) {
+                        listItem.style.display = 'block'; 
+                    } else {
+                        listItem.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> 
-  <script src="chart1.js"></script>
-  <script src="chart2.js"></script>
+ 
 </body>
 </html>

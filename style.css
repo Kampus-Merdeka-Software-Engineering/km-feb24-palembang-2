@@ -7,7 +7,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body {
-    overflow-x: hidden;
+    overflow-x: auto;
   }
 
 .topbar {
@@ -288,6 +288,8 @@ footer {
     left: 50px;
     min-height: calc(100%);
     background: whitesmoke;
+    overflow-x: auto;
+
 }
 
 .cards{
@@ -308,13 +310,35 @@ footer {
 }
 
 
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1280px) {
     .main {
+
         height: auto;
-        width: 1280px;
         left: 50px;
-        justify-content: center;
-    }}
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        width: auto;
+    }
+
+    .cards.card {
+        flex-direction: column;
+    }
+
+    .cards.card img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cards.card h2 {
+        font-size: 1.2rem;
+    }
+
+    .cards.card p {
+        font-size: 0.9rem;
+    }
+}
 @media screen and (max-width: 530px) {
     .main {
         width: auto;
@@ -323,7 +347,8 @@ footer {
     }
 
     .cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        width: auto;
     }
 
     .cards.card {
@@ -352,7 +377,7 @@ footer {
     grid-gap: 20px;
     max-width: 100%;
     padding: 20px;
-    overflow-x: hidden;
+    overflow-x: auto;
     padding-top: 0;
   
 }
@@ -381,26 +406,8 @@ footer {
     justify-content: space-between;
 }
 
+
 @media screen and (max-width: 1280px) {
-    .charts {
-        grid-template-columns: 1fr;
-        width: 1280px;
-    }
-
-    .chart {
-        grid-column: span 1;
-    }
-
-    .line_chart {
-        grid-column: span 2;
-        margin-bottom: 1800px;
-<<<<<<< HEAD
-        
-=======
->>>>>>> cf322a3057539f96594f77da2441f52819185d56
-    }
-}
-@media screen and (max-width: 800px) {
     .charts {
         grid-template-columns: 1fr;
         width: 1280px;
@@ -420,7 +427,6 @@ footer {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    position: relative;
 }
 
 .box {
@@ -523,22 +529,9 @@ footer {
 
 /* Media queries untuk tampilan PC */
 @media screen and (max-width: 1200px) {
-    .wadah {
-        min-height: 90vh;
-    }
-
-    .box, .bungkus {
-        width: 400px;
-        height: 450px;
-    }
-}
-
-/* Media queries untuk tampilan HP */
-@media screen and (max-width: 1280px) {
-    .wadah {
+    .wadah
         min-height: 80vh;
         margin-bottom: 100%;
-
     }
 
     .box, .bungkus {
@@ -553,8 +546,24 @@ footer {
     .rating > label:before {
         font-size: 1.5em;
     }
-<<<<<<< HEAD
+
+/* Media queries untuk tampilan HP */
+@media screen and (max-width: 530px) {
+    .wadah
+        min-height: 80vh;
+        margin-bottom: 100%;
+    }
+
+    .box, .bungkus {
+        height: auto;
+        padding: 20px;
+    }
+
+    .review-text {
+        height: 80px;
+    }
+
+    .rating > label:before {
+        font-size: 1.5em;
+    }
 }
-=======
-}
->>>>>>> cf322a3057539f96594f77da2441f52819185d56
