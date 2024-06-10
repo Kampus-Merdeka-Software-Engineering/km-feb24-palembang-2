@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+body {
+    overflow-x: hidden;
+  }
 
 .topbar {
     position: fixed;
@@ -62,37 +66,36 @@
     width: 100%;
     object-fit: cover;
 }
-.image_dash{
+
+.image_dash {
     width: 1200px;
     height: 400px;
     padding-left: 120px;
     padding-bottom: 30px;
     padding-right: 120px;
-    
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     .topbar {
-        grid-template-columns: 1fr 4fr 0.4fr 1fr; 
+        grid-template-columns: 1fr 4fr 0.4fr 1fr;
     }
 
     .search {
-        width: 50%; 
+        width: 50%;
     }
 
     .sidebar {
-        width: 100%; 
-        position: static; 
-        top: 60px; 
+        width: 100%;
+        position: static;
+        top: 60px;
     }
+
     .image_dash {
         width: auto;
         height: auto;
-     
-
-
     }
 }
+
 /* Code Team */
 .kontainer {
     display: flex;
@@ -141,7 +144,7 @@
     justify-content: center;
 }
 
-.kontainer .kartu .detail .social a {
+.kontainer .kartu .social a {
     margin: 8px;
     width: 40px;
     height: 40px;
@@ -159,11 +162,12 @@
     font-size: 21px;
     color: white;
 }
+
 @media screen and (max-width: 1200px) {
-    .kontainer.kartu {
-         width: 100%;
-     }
- }
+    .kontainer .kartu {
+        width: 100%;
+    }
+}
 
 /* awal code dashboard */
 footer {
@@ -178,8 +182,7 @@ footer {
     text-align: center;
     padding-left: 200px;
     padding-bottom: 30px;
-    padding-right:200px ;
-    
+    padding-right: 200px;
 }
 
 .foot ul {
@@ -203,12 +206,13 @@ footer {
     color: white;
 }
 
-@media screen and (max-width: 1200px)  {
- .wrapper {
+@media screen and (max-width: 1200px) {
+    .wrapper {
         grid-template-columns: 100%;
     }
-    .foot{
-        padding-top: 170% ;
+
+    .foot {
+        padding-top: 170%;
     }
 }
 
@@ -246,26 +250,30 @@ footer {
     text-align: center;
 }
 
-@media screen and (max-width: 200px)  {
-.sidebar {
+@media screen and (max-width: 200px) {
+    .sidebar {
         width: 100%;
         height: auto;
         position: relative;
-        left: 0px;
+        left: 0;
         top: 0;
     }
-   .sidebar ul {
+
+    .sidebar ul {
         display: flex;
         justify-content: space-between;
     }
-   .sidebar ul li {
+
+    .sidebar ul li {
         width: auto;
     }
-   .sidebar ul li a {
+
+    .sidebar ul li a {
         height: 40px;
         padding: 0 10px;
     }
-   .sidebar ul li a i {
+
+    .sidebar ul li a i {
         min-width: 40px;
         font-size: 18px;
     }
@@ -275,7 +283,8 @@ footer {
 .main {
     position: absolute;
     top: 60px;
-    width: calc(120% - 140px);
+    width: calc(100% - 50px);
+    padding-right: 20px;
     left: 50px;
     min-height: calc(100%);
     background: whitesmoke;
@@ -298,39 +307,54 @@ footer {
     box-shadow: 0 7px 25px 0 rgba(0,0,0,0.08);
 }
 
-@media screen and (max-width: 1200px)  {
-  .main  {
+
+@media screen and (max-width: 1380px) {
+    .main {
+        height: auto;
+        width: 1280px;
+        left: 50px;
+        justify-content: center;
+    }}
+@media screen and (max-width: 530px) {
+    .main {
         width: auto;
         height: auto;
         left: 50px;
     }
-  .cards {
+
+    .cards {
         grid-template-columns: repeat(2, 1fr);
     }
-  .cards.card {
+
+    .cards.card {
         flex-direction: column;
     }
-  .cards.card img {
+
+    .cards.card img {
         width: 100%;
         margin-bottom: 20px;
     }
-  .cards.card h2 {
+
+    .cards.card h2 {
         font-size: 1.2rem;
     }
-  .cards.card p {
-        font-size: 0.9rem;
 
+    .cards.card p {
+        font-size: 0.9rem;
     }
-    
 }
-/* bagian chartsnya */
+
+
+/* bagian charts */
 .charts {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
-    width: 100%;
+    max-width: 100%;
     padding: 20px;
+    overflow-x: hidden;
     padding-top: 0;
+  
 }
 
 .chart {
@@ -339,49 +363,65 @@ footer {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    grid-column: span 1;
 }
 
-.chart h2 {
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: black;
-    text-align: center;
+.line_chart {
+    background: #fff;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    grid-column: span 2;
 }
 
-@media screen and (max-width: 1200px) {
-   .charts {
+.chart.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1280px) {
+    .charts {
         grid-template-columns: 1fr;
-        left: 50px;
+        width: 1280px;
     }
-   .chart {
-        margin-bottom: 20px;
+
+    .chart {
+        grid-column: span 1;
     }
-   .chart h2 {
-        font-size: 18px;
+
+    .line_chart {
+        grid-column: span 2;
+        margin-bottom: 1800px;
     }
 }
+@media screen and (max-width: 800px) {
+    .charts {
+        grid-template-columns: 1fr;
+        width: 1280px;
+    }
 
-.text1{
-    text-align: center;
-}
-.text2{
-    text-align: center;
-}
-.text3{
-    text-align: center;
-}
+    .chart {
+        grid-column: span 1;
+    }
 
-/* bagian formnya */
-
+    .line_chart {
+        grid-column: span 2;
+        margin-bottom: 1800px;
+    }
+}
 .wadah {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
 }
-.box{
+
+.box {
     width: 450px;
+    max-width: 90%;
     height: 500px;
     background: #EEF7FF;
     backdrop-filter: blur(20px);
@@ -391,23 +431,28 @@ footer {
                 -2px -0px 15px 2px rgba(0,0,0,0.1);
     z-index: 10;
 }
+
 .rating {
     text-align: center;
     margin: 20px 0;
     position: relative;
 }
+
 .rating > input {
     display: none;
 }
+
 .rating > label:before {
     content: "\2605";
     font-size: 2em;
 }
+
 .rating > input:checked ~ label:before,
 .rating:not(:checked) > label:hover ~ label:before {
     content: "\2605";
     color: gold;
 }
+
 .review-text {
     width: 100%;
     height: 100px;
@@ -429,6 +474,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .submit-btn:hover {
     background-color: rgb(255, 191, 0);
 }
@@ -440,21 +486,24 @@ footer {
     border-radius: 5px;
 }
 
-.bottom{
+.bottom {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
     position: relative;
 }
-.bottom .review-text{
+
+.bottom .review-text {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
     position: relative;
 }
-.bungkus{
+
+.bungkus {
     position: absolute;
     width: 455px;
+    max-width: 90%;
     height: 500px;
     border-radius: 30px;
     background: rgb(255, 191, 0);
@@ -462,27 +511,38 @@ footer {
                 -2px -0px 15px 2px rgba(0,0,0,0.054);
     transform: rotate(5deg);
 }
-@media screen and (max-width: 1200px)  {
+
+
+/* Media queries untuk tampilan PC */
+@media screen and (max-width: 1200px) {
     .wadah {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         min-height: 90vh;
-        position: relative;
-}
-.bungkus{
-    position: absolute;
-    width: 455px;
-    height: 500px;
-    border-radius: 30px;
-    background: rgb(255, 191, 0);
-    box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.115),
-                -2px -0px 15px 2px rgba(0,0,0,0.054);
-    transform: rotate(5deg);
+    }
+
+    .box, .bungkus {
+        width: 400px;
+        height: 450px;
+    }
 }
 
+/* Media queries untuk tampilan HP */
+@media screen and (max-width: 1280px) {
+    .wadah {
+        min-height: 80vh;
+        margin-bottom: 100%;
 
+    }
+
+    .box, .bungkus {
+        height: auto;
+        padding: 20px;
+    }
+
+    .review-text {
+        height: 80px;
+    }
+
+    .rating > label:before {
+        font-size: 1.5em;
+    }
 }
-
-
-   
