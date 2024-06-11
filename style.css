@@ -73,6 +73,7 @@ body {
     padding-left: 120px;
     padding-bottom: 30px;
     padding-right: 120px;
+    margin-left: 50px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -93,6 +94,51 @@ body {
     .image_dash {
         width: auto;
         height: auto;
+
+        
+    }
+}
+@media screen and (max-width: 950px) {
+    .topbar {
+        grid-template-columns: 1fr 4fr 0.4fr 1fr;
+    }
+
+    .search {
+        width: 50%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        top: 60px;
+    }
+
+    .image_dash {
+        width: auto;
+        height: auto;
+        margin: auto;
+        
+    }
+}
+@media screen and (max-width: 530px) {
+    .topbar {
+        grid-template-columns: 1fr 4fr 0.4fr 1fr;
+    }
+
+    .search {
+        width: 50%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        top: 60px;
+    }
+
+    .image_dash {
+        width: auto;
+        height: auto;
+        
     }
 }
 
@@ -172,7 +218,14 @@ body {
 /* awal code dashboard */
 footer {
     background: #571212;
-    margin-bottom: none;
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -7px 25px 0 rgba(0, 0, 0, 0.08);
 }
 
 .wrapper {
@@ -183,6 +236,8 @@ footer {
     padding-left: 200px;
     padding-bottom: 30px;
     padding-right: 200px;
+    color: #fff;
+   margin-left: 250px;
 }
 
 .foot ul {
@@ -209,13 +264,23 @@ footer {
 @media screen and (max-width: 1200px) {
     .wrapper {
         grid-template-columns: 100%;
+        margin: auto;
     }
 
     .foot {
         padding-top: 170%;
     }
 }
+@media screen and (max-width: 700px) {
+    .wrapper {
+        grid-template-columns: 100%;
+        margin: auto;
+    }
 
+    .foot {
+        padding-top: auto;
+    }
+}
 /* awal code sidebar */
 .sidebar {
     position: fixed;
@@ -284,13 +349,16 @@ footer {
     position: absolute;
     top: 60px;
     width: calc(100% - 50px);
-    padding-right: 20px;
+    padding-right: 10px;
     left: 50px;
     min-height: calc(100%);
     background: whitesmoke;
     overflow-x: auto;
-
+    background-image: url('images/Gambar_Vanding.jpg');
+    background-size: cover; 
+    background-position: center;
 }
+
 
 .cards{
     width: 200%;
@@ -344,6 +412,8 @@ footer {
         width: auto;
         height: auto;
         left: 50px;
+        padding-bottom: 50%;
+        
     }
 
     .cards {
@@ -427,6 +497,7 @@ footer {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin-bottom: 100px;
 }
 
 .box {
@@ -531,7 +602,7 @@ footer {
 @media screen and (max-width: 1200px) {
     .wadah
         min-height: 80vh;
-        margin-bottom: 100%;
+        margin-bottom: 800px;
     }
 
     .box, .bungkus {
@@ -551,7 +622,7 @@ footer {
 @media screen and (max-width: 530px) {
     .wadah
         min-height: 80vh;
-        margin-bottom: 100%;
+        overflow-y: auto;
     }
 
     .box, .bungkus {
@@ -566,4 +637,3 @@ footer {
     .rating > label:before {
         font-size: 1.5em;
     }
-}
