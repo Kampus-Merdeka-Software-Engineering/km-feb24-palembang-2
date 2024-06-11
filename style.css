@@ -76,6 +76,7 @@ body {
     margin-left: 50px;
 }
 
+
 @media screen and (max-width: 1200px) {
     .topbar {
         grid-template-columns: 1fr 4fr 0.4fr 1fr;
@@ -354,9 +355,21 @@ footer {
     min-height: calc(100%);
     background: whitesmoke;
     overflow-x: auto;
+
+}
+.main_dash {
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 50px);
+    padding-right: 10px;
+    left: 50px;
+    min-height: calc(100%);
+    background: whitesmoke;
+    overflow-x: auto;
     background-image: url('images/Gambar_Vanding.jpg');
     background-size: cover; 
     background-position: center;
+
 }
 
 
@@ -380,6 +393,11 @@ footer {
 
 @media screen and (max-width: 1280px) {
     .main {
+
+        height: auto;
+        left: 50px;
+    }
+    .main_dash {
 
         height: auto;
         left: 50px;
@@ -409,6 +427,13 @@ footer {
 }
 @media screen and (max-width: 530px) {
     .main {
+        width: auto;
+        height: auto;
+        left: 50px;
+        padding-bottom: 50%;
+        
+    }
+    .main_dash {
         width: auto;
         height: auto;
         left: 50px;
