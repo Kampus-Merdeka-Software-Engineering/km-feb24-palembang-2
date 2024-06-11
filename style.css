@@ -67,14 +67,7 @@ body {
     object-fit: cover;
 }
 
-.image_dash {
-    width: 1200px;
-    height: 400px;
-    padding-left: 120px;
-    padding-bottom: 30px;
-    padding-right: 120px;
-    margin-left: 50px;
-}
+
 
 
 @media screen and (max-width: 1200px) {
@@ -92,12 +85,6 @@ body {
         top: 60px;
     }
 
-    .image_dash {
-        width: auto;
-        height: auto;
-
-        
-    }
 }
 @media screen and (max-width: 950px) {
     .topbar {
@@ -238,8 +225,10 @@ footer {
     padding-bottom: 30px;
     padding-right: 200px;
     color: #fff;
-   margin-left: 250px;
+    margin-left: 250px;
+    text-shadow: 10px 10px 20px black; 
 }
+
 
 .foot ul {
     display: grid;
