@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Rate Us</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link media="all" type="text/css" rel="stylesheet" href="style.css">
 
@@ -19,7 +19,6 @@
                 <input type="text" id="search" placeholder="search here">
                 <label for="search"> <i class="fas fa-search"> </i></label>
             </div>
-            <i class="fas fa-bell"></i>
             <div class="user">
                 <img src="images/revou.png" alt="">
             </div>
@@ -73,8 +72,8 @@
                     </div>
                 
                     <div class="bottom">
-                        <textarea id="reviewText" class="review-text" placeholder="Tulis ulasan Anda di sini..."></textarea>
-                        <button onclick="submitReview()" class="submit-btn">Kirim Ulasan</button>
+                        <textarea id="reviewText" class="review-text" placeholder="Type here..."></textarea>
+                        <button onclick="submitReview()" class="submit-btn">Send</button>
                     </div>
                 
                     <div id="reviewResult" class="review-result"></div>
@@ -90,12 +89,12 @@
                         var reviewText = document.getElementById('reviewText').value;
                 
                         if (!rating || !reviewText) {
-                            alert("Harap beri rating dan tulis ulasan Anda sebelum mengirim!");
+                            alert("Please rate and type your review before submitting!");
                             return;
                         }
                 
                         var result = "Rating: " + rating.value + "/5<br>";
-                        result += "Ulasan: " + reviewText;
+                        result += "Comment: " + reviewText;
                 
                         document.getElementById('reviewResult').innerHTML = result;
                     }

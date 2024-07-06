@@ -24,7 +24,7 @@ body {
 }
 
 .logo h2 {
-    color: #a2b9bc;
+    color: #000000;
 }
 
 .search {
@@ -61,7 +61,7 @@ body {
 .user img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 90px;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -205,7 +205,7 @@ body {
 
 /* awal code dashboard */
 footer {
-    background: #571212;
+    background: #0e2233;
     position: absolute; 
     bottom: 0;
     width: 100%;
@@ -241,7 +241,7 @@ footer {
 
 .foot ul li {
     padding: 2em;
-    color: #E98A8A;
+    color: #dbdbdb;
 }
 
 .foot ul li span {
@@ -271,13 +271,14 @@ footer {
         padding-top: auto;
     }
 }
+
 /* awal code sidebar */
 .sidebar {
     position: fixed;
     top: 60px;
     width: 50px;
     height: calc(100% - 60px);
-    background: #149cae;
+    background: #a3a3a3;
     overflow-x: hidden;
 }
 
@@ -361,6 +362,12 @@ footer {
 
 }
 
+/* halaman tim */
+.judul-tim {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
 .cards{
     width: 200%;
@@ -462,7 +469,7 @@ footer {
     max-width: 100%;
     padding: 20px;
     overflow-x: auto;
-    padding-top: 0;
+    margin-top: 10px;
   
 }
 
