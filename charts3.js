@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(RPrice);
   
             new Chart(ctx, {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: products,
                     datasets: [{

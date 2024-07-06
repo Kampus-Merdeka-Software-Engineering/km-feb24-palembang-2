@@ -482,7 +482,7 @@ footer {
     grid-column: span 1;
 }
 
-.line_chart {
+.bar_chart {
     background: #fff;
     width: 100%;
     padding: 20px;
@@ -490,6 +490,14 @@ footer {
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
     grid-column: span 2;
 }
+/* .line_chart {
+    background: #fff;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    grid-column: span 2;
+} */
 
 .chart.header {
     display: flex;
