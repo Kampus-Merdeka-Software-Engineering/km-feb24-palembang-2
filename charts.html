@@ -85,9 +85,9 @@
                          <h2> Order per Category </h2>
                         <canvas id="doughnut"></canvas>
                     </div>
-                    <div class="bar_chart" id="bar">
+                    <div class="line_chart" id="garis">
                         <h2> Order per Product  </h2>
-                       <canvas id="bar"></canvas>
+                       <canvas id="line"></canvas>
                    </div>
                </div>
                 </div>
@@ -135,11 +135,11 @@ function updateCardData() {
 
            
             // Mengambil jumlah data dari chart
-            var totalData = RCoils.reduce((a, b) => a + b, 0);
-            document.getElementById("card1Number").innerText = totalData;
-            document.getElementById("card1Name").innerText = "Total Orders per Product";
-            document.getElementById("card2Number").innerText = totalData;
-            document.getElementById("card2Name").innerText = "Total Orders per Location";
+            // var totalData = RCoils.reduce((a, b) => a + b, 0);
+            // document.getElementById("card1Number").innerText = totalData;
+            // document.getElementById("card1Name").innerText = "Total Orders per Product";
+            // document.getElementById("card2Number").innerText = totalData;
+            // document.getElementById("card2Name").innerText = "Total Orders per Location";
      
         });
 }
