@@ -42,7 +42,7 @@ body {
     outline: none;
     border: none;
     border-radius: 12px;
-    background: #e6e2d3;
+    background: #d7e7ec;
 }
 
 .search i {
@@ -143,13 +143,13 @@ body {
 .kontainer .kartu {
     width: 200px;
     margin: 10px;
-    background: #758694;
+    background: #2d4b50;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .kontainer .kartu:hover {
-    background: #9dccf3;
+    background: #6cb8c5;
 }
 
 .kontainer .kartu .profile {
@@ -158,7 +158,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     margin: 20px auto;
-    border: 5px solid #96C9F4;
+    border: 5px solid #6cb8c5;
 }
 
 .kontainer .kartu .profile img {
@@ -170,6 +170,7 @@ body {
 .kontainer .kartu .detail h2,
 .kontainer .kartu .detail h4 {
     margin: 10px 0;
+    color: #fff;
 }
 
 .kontainer .kartu .social {
@@ -206,7 +207,7 @@ body {
 
 /* awal code dashboard */
 footer {
-    background: #0e2233;
+    background: #2d4b50;
     position: absolute; 
     bottom: 0;
     width: 100%;
@@ -279,7 +280,7 @@ footer {
     top: 60px;
     width: 50px;
     height: calc(100% - 60px);
-    background: #758694;
+    background: #538392;
     overflow-x: hidden;
 }
 
@@ -574,7 +575,7 @@ footer {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: rgb(255, 191, 0);
+    background-color: #538392;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -583,7 +584,7 @@ footer {
 }
 
 .submit-btn:hover {
-    background-color: rgb(231, 173, 0);
+    background-color: #426772;
 }
 
 .review-result {
