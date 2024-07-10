@@ -24,7 +24,7 @@ body {
 }
 
 .logo h2 {
-    color: #000000;
+    color: #2d4b50;
     font-style: italic;
 }
 
@@ -296,7 +296,7 @@ footer {
 .sidebar ul li a {
     width: 100%;
     text-decoration: none;
-    color: black;
+    color: #101a1b;
     height: 60px;
     display: flex;
     align-items: center;
@@ -369,6 +369,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
+    color: #2d4b50;
 }
 
 .cards{
@@ -484,6 +485,10 @@ footer {
     grid-column: span 1;
 }
 
+.chart h2 {
+    color: #2d4b50;
+}
+
 .line_chart {
     background: #fff;
     width: 100%;
@@ -491,6 +496,10 @@ footer {
     border-radius: 10px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
     grid-column: span 2;
+}
+
+.line_chart h2 {
+    color: #2d4b50;
 }
 
 .chart.header {
@@ -534,6 +543,10 @@ footer {
     box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.1),
                 -2px -0px 15px 2px rgba(0,0,0,0.1);
     z-index: 10;
+}
+
+.box h2 {
+    color: #2d4b50;
 }
 
 .rating {
