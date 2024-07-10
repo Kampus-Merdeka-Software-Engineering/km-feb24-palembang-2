@@ -25,6 +25,7 @@ body {
 
 .logo h2 {
     color: #000000;
+    font-style: italic;
 }
 
 .search {
@@ -142,13 +143,13 @@ body {
 .kontainer .kartu {
     width: 200px;
     margin: 10px;
-    background: #444;
+    background: #758694;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .kontainer .kartu:hover {
-    background: coral;
+    background: #9dccf3;
 }
 
 .kontainer .kartu .profile {
@@ -157,7 +158,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     margin: 20px auto;
-    border: 5px solid coral;
+    border: 5px solid #96C9F4;
 }
 
 .kontainer .kartu .profile img {
@@ -278,7 +279,7 @@ footer {
     top: 60px;
     width: 50px;
     height: calc(100% - 60px);
-    background: #a3a3a3;
+    background: #758694;
     overflow-x: hidden;
 }
 
@@ -582,7 +583,7 @@ footer {
 }
 
 .submit-btn:hover {
-    background-color: rgb(255, 191, 0);
+    background-color: rgb(231, 173, 0);
 }
 
 .review-result {
