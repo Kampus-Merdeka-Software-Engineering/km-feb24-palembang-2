@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rate Us</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link media="all" type="text/css" rel="stylesheet" href="style.css">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
@@ -56,49 +55,61 @@
                     </ul>
 
             </div>
-            <div class="main">
-                <div class="wadah">
-                    <div class="box">
-                    <h2 class="header" style="margin-bottom: 50px; display: flex;
-                        justify-content: center;"> Rate Us </h2>
-                
-                    <div class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Sangat Bagus"></label>
-                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Bagus"></label>
-                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Cukup"></label>
-                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Buruk"></label>
-                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sangat Buruk"></label>
+            <div></div>
+            <div class="main_home">
+                <div class="wrapper">
+                    <div id="wrap">
+        
+                        <h1 class="text1">Vending Mechine</h1>
+                        <article>
+                            
+                            <p class="text2">
+                              When hunger strikes, our Vending Machine Sales are ready to help you
+                            </p>
+                            <aside>
+                              <p class="text3">Find a wide selection of snacks and fresh drinks on every corner</p>
+                            </aside>
+                           
+                          </article>
                     </div>
-                
-                    <div class="bottom">
-                        <textarea id="reviewText" class="review-text" placeholder="Type here..."></textarea>
-                        <button onclick="submitReview()" class="submit-btn">Submit</button>
-                    </div>
-                
-                    <div id="reviewResult" class="review-result"></div>
                     
-                </div> 
-                <div class="bungkus"></div>
+                    
                 </div>
                 
-                
-                <script>
-                    function submitReview() {
-                        var rating = document.querySelector('input[name="rating"]:checked');
-                        var reviewText = document.getElementById('reviewText').value;
-                
-                        if (!rating || !reviewText) {
-                            alert("Please rate and type your review before submitting!");
-                            return;
-                        }
-                
-                        var result = "Rating: " + rating.value + "/5<br>";
-                        result += "Comment: " + reviewText;
-                
-                        document.getElementById('reviewResult').innerHTML = result;
-                    }
+                <div class="foot"> 
+                    <footer>
+                        <ul>
+                            <li>
+                                <span>Don't want it to be complicated?</span>
+                                Ease of shopping without the hassle! Find a selection of your favorite snacks and drinks at our vending machine.
+                            </li>
+                            <li>
+                                <span>Want a cool snack?</span>
+                                Swipe at our vending machine for the latest collection! We are ready to make your day cooler
+                            </li>
+                            <li>
+                                
+                                Our vending machines are ready to make you addicted, 
+                                trendy snacks and drinks, make the atmosphere even more exciting, 
+                                wherever and whenever. From those that soothe your throat to those that make your eyes widen, 
+                                just rush in with a relaxed style, enjoy an unforgettable shopping experience, friends!
+            
+         
+                            </li>
+            
+                            
+                        </ul>
+                    </footer>
+                   
 
-                    document.addEventListener("DOMContentLoaded", function() {
+
+                </div>
+                
+            </div>
+    </div>
+
+    <script>
+         document.addEventListener("DOMContentLoaded", function() {
             const searchInput = document.getElementById('search');
             searchInput.addEventListener('keyup', function(event) {
                 const searchTerm = event.target.value.toLowerCase();
@@ -115,12 +126,11 @@
             });
         });
 
-                    
-         </script>
-                
-                
-            </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> 
+ 
 </body>
 </html>

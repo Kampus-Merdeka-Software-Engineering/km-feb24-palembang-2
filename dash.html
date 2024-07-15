@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link media="all" type="text/css" rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
@@ -26,91 +25,78 @@
                 
                     <ul>
                         <li> 
-                            <a href="dash.html">
+                            <a href="home.html">
                             <i class=" fas fa-th-large"></i>
-                            <div> Dashboard</div>
-                         </a>
+                            <div> Home </div>
+                        </a>
                         
                         </li>
-
+                    
                         <li> 
-                            <a href="charts.html">
+                            <a href="dash.html">
                             <i class=" fas fa-chart-bar"></i>
-                            <div> Charts </div>
-                         </a>
+                            <div> Dashboard </div>
+                        </a>
                         </li>
-                        <li> 
+                    <li> 
                             <a href="team.html">
                             <i class=" fas fa-users"></i>
-                            <div> Team</div>
-                         </a>
+                            <div> Team </div>
+                        </a>
                         </li>
-
                         <li> 
                             <a href="rate.html">
                             <i class=" fas fa-star"></i>
                             <div> Rate us </div>
-                         </a>
+                        </a>
                         </li>
-                      
+                        
                     </ul>
 
             </div>
-            <div></div>
-            <div class="main_dash">
-                <div class="wrapper">
-                    <div id="wrap">
-        
-                        <h1 class="text1">Vending Mechine</h1>
-                        <article>
-                            
-                            <p class="text2">
-                              When hunger strikes, our Vending Machine Sales are ready to help you
-                            </p>
-                            <aside>
-                              <p class="text3">Find a wide selection of snacks and fresh drinks on every corner</p>
-                            </aside>
-                           
-                          </article>
+            <div class="main">
+                <!-- <div class="cards">
+                  
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="number" id="card2Number">  </div>
+                            <div class="card-name" id="card2Name">  </div>
                     </div>
-                    
-                    
+                        <div class="icon-box">
+                            <i class="fas fa-chart-bar"> </i>
+                        </div>
+                    </div>
+                      <div class="card">
+                        <div class="card-content">
+                            <div class="number" id="card1Number">  </div>
+                            <div class="card-name" id="card1Name">  </div>
+                    </div>
+                        <div class="icon-box">
+                            <i class="fas fa-chart-bar"> </i>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="charts">
+                    <div class="chart">
+                        <h2> Order per Location </h2>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                  <div class="chart" id="donat">
+                         <h2> Order per Category </h2>
+                        <canvas id="doughnut"></canvas>
+                    </div>
+                    <div class="line_chart" id="garis">
+                        <h2> Order per Product  </h2>
+                       <canvas id="line"></canvas>
+                   </div>
+               </div>
                 </div>
-                
-                <div class="foot"> 
-                    <footer>
-                        <ul>
-                            <li>
-                                <span>Don't want it to be complicated?</span>
-                                Ease of shopping without the hassle! Find a selection of your favorite snacks and drinks at our vending machine.
-                            </li>
-                            <li>
-                                <span>Want a cool snack?</span>
-                                Swipe at our vending machine for the latest collection! We are ready to make your day cooler
-                            </li>
-                            <li>
-                                
-                                Our vending machines are ready to make you addicted, 
-                                trendy snacks and drinks, make the atmosphere even more exciting, 
-                                wherever and whenever. From those that soothe your throat to those that make your eyes widen, 
-                                just rush in with a relaxed style, enjoy an unforgettable shopping experience, friends!
-            
-         
-                            </li>
-            
-                            
-                        </ul>
-                    </footer>
-                   
-
-
-                </div>
-                
             </div>
-    </div>
+            
+    </div> 
 
     <script>
-         document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             const searchInput = document.getElementById('search');
             searchInput.addEventListener('keyup', function(event) {
                 const searchTerm = event.target.value.toLowerCase();
@@ -128,10 +114,46 @@
         });
 
 
+        ///chartsnya
+    document.addEventListener("DOMContentLoaded", function() {
+    updateCardData();
+});
+
+function updateCardData() {
+    const ctx1 = document.getElementById('myChart');
+     const ctx3 = document.getElementById('line');
+    fetch('./data/mechine.json')
+        .then((response) => response.json())
+        .then((data) => {
+            const uniqueData = _.uniqBy(data, 'Location');
+            const locations = uniqueData.map((item) => item.Location);
+            const RCoils = uniqueData.map((item) => item.RCoil);
+
+            const uniqueProducts = _.uniqBy(data, 'Product');
+            const products = uniqueProducts.map((item) => item.Product);
+            const RPrice = uniqueProducts.map((item) => item.RPrice);
+
+           
+            // Mengambil jumlah data dari chart
+            var totalData = RCoils.reduce((a, b) => a + b, 0);
+            document.getElementById("card1Number").innerText = totalData;
+            document.getElementById("card1Name").innerText = "Total Orders per Product";
+            document.getElementById("card2Number").innerText = totalData;
+            document.getElementById("card2Name").innerText = "Total Orders per Location";
+     
+        });
+}
+
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> 
- 
+    
+     
+    
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> <!-- Include lodash library -->
+  <script src="chart1.js"></script>
+  <script src="chart2.js"></script>
+  <script src="charts3.js"></script>
+  
 </body>
 </html>
